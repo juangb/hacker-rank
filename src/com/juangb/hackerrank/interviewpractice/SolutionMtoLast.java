@@ -1,4 +1,4 @@
-package com.juangb.hackerrank;
+package com.juangb.hackerrank.interviewpractice;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -45,7 +45,7 @@ import java.util.StringTokenizer;
  * 
  */
 
-public class Solution {
+public class SolutionMtoLast {
 
 	public class Node{
 		private int value;
@@ -131,7 +131,7 @@ public class Solution {
 	    		return;
 	    	
 	    	Integer positions = null;
-	    	Solution sol = new Solution();
+	    	SolutionMtoLast sol = new SolutionMtoLast();
 	    	DoublyLinkedList numbersList = sol.new DoublyLinkedList();
 	    	try{
 	    		positions = Integer.parseInt(mPosition);

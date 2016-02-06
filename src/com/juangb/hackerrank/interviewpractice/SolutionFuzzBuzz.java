@@ -1,4 +1,4 @@
-package com.juangb.hackerrank;
+package com.juangb.hackerrank.interviewpractice;
 
 import java.io.BufferedReader;
 import java.io.IOException;
