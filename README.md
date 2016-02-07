@@ -1,4 +1,5 @@
 # hacker-rank
-Practice exercises for Hacker Rank interviews 
 
-This is a test for the first github commits
+Solutions to hacker rank exercises in Java.
+
+I accept pull requests in any other language.
