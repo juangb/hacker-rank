@@ -10,10 +10,13 @@ public class TreeUtils {
 	Node is defined as  
 	*/
 
-	class Node {
+	static class Node {
 	    int data;
 	    Node left;
 	    Node right;
+	    public Node(){
+	    	super();
+	    }
 	}
 
 	
@@ -315,6 +318,137 @@ public class TreeUtils {
 	       }
 	    }
 	   
+	   
+	   /*
+	    * https://www.hackerrank.com/challenges/binary-search-tree-insertion
+	    * 
+	    * You are given a pointer to the root of a binary search tree and a value to be inserted into the tree. Insert this value into its appropriate position in the binary search tree and return the root of the updated binary tree. You just have to complete the function.
+        * 
+        * Input Format
+        * 
+        * You are given a function,
+        * 
+        * node * insert (node * root ,int value)
+        * {
+        * 
+        * }
+        * node is defined as :
+        * 
+        * struct node
+        * {
+        * int data;
+        * node * left;
+        * node * right;
+        * }node;
+        * Output Format
+        * 
+        * Return the root of the binary search tree after inserting the value into the tree.
+        * 
+        * Sample Input
+        * 
+        *         4
+        *        / \
+        *       2   7
+        *      / \
+        *     1   3
+        * The value to be inserted is 6.
+        * 
+        * Sample Output
+        * 
+        *          4
+        *        /   \
+        *       2     7
+        *      / \   /
+        *     1   3 6
+        *     
+	    */
 	  
+	   static Node Insert(Node root,int value){	
+		   if(root==null){
+			   Node newNode= new Node();
+			   newNode.data=value;
+			   return newNode;
+		   }		   
+		   insertRecursive(root,value);
+		   return root;
+	    }
+	   
+	   static void insertRecursive(Node node, int value){
+		   if(node==null)
+			   return;
+		   if(value<node.data){
+			   if(node.left==null){
+				   Node newNode= new Node();
+				   newNode.data=value;
+				   node.left=newNode;
+			   }else{
+				   insertRecursive(node.left,value);
+			   }
+		   }else if(value>node.data){
+			   if(node.right==null){
+				   Node newNode= new Node();
+				   newNode.data=value;
+				   node.right=newNode;
+			   }else{
+				   insertRecursive(node.right,value);
+			   }
+		   }		 
+	   }
+	   
+	   /*
+	    * Binary Search Tree : Lowest Common Ancestor
+	    * https://www.hackerrank.com/challenges/binary-search-tree-lowest-common-ancestor
+	    * 
+	    * You are given pointer to the root of the binary search tree and two values v1 and v2. You need to return the lowest common ancestor (LCA) of v1 and v2 in the binary search tree. You only need to complete the function.
+        * 
+        * Input Format
+        * 
+        * You are given a function,
+        * 
+        * node * LCA (node * root ,int v1,int v2)
+        * {
+        * 
+        * }
+        * It is guaranteed that v1 and v2 are present in the tree.
+        * 
+        * Node is defined as :
+        * 
+        * struct node
+        * {
+        * int data;
+        * node * left;
+        * node * right;
+        * }node;
+        * Output Format
+        * 
+        * Return the LCA of v1 and v2.
+        * 
+        * Sample Input
+        * 
+        *          4
+        *        /   \
+        *       2     7
+        *      / \   /
+        *     1   3 6
+        * v1=1 and v2=7.
+        * 
+        * Sample Output
+        * 
+        * LCA of 1 and 7 is 4 (which is the root). 
+        * Return a pointer to the root in this case.
+        * 
+	    */
+	   static Node lca(Node root,int v1,int v2){
+		   if(root==null)
+			   return null;
+		   if(v1<root.data && v2<root.data)
+			   return lca(root.left,v1,v2);
+		   else if(v1>root.data && v2>root.data)
+			   return lca(root.right,v1,v2);
+		   else
+			   return root;
+	       
+	    }
+
 
 }
