@@ -1,5 +1,6 @@
 # hacker-rank
 
-Solutions to hacker rank exercises in Java.
+Solutions of exercises at hacker rank in Java language.
 
-I accept pull requests in any other language.
+
+Pull requests in any other languages are accpetable.
